@@ -53,25 +53,33 @@ const filterTemples = (temples) => {
       const utahTemples = temples.filter((temple) =>
         temple.location.includes('Utah')
       );
-      displayTemples(utahTemples);
+      displayTemples(utahTemples.sort(sortTemple));
       break;
     case 'notutah':
       const notUtTemples = temples.filter(
         (temple) => !temple.location.includes('Utah')
       );
-      displayTemples(notUtTemples);
+      displayTemples(notUtTemples.sort(sortTemple));
       break;
     case 'older':
       const year = new Date(1950, 0, 1);
       const oldTemples = temples.filter(
         (temple) => Date.parse(temple.dedicated) < year
       );
-      displayTemples(oldTemples);
+      displayTemples(oldTemples.sort(sortTemple));
       break;
     case 'all':
-      displayTemples(temples);
+      displayTemples(temples.sort(sortTemple));
       break;
   }
+};
+
+const sortTemple = (a, b) => {
+  if (a.templeName < b.templeName) {
+    return -1;
+  } else if (a.templeName > b.templeName) {
+    return 1;
+  } else return 0;
 };
 
 getTemples(templeUrl);
