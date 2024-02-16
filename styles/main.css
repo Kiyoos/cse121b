@@ -167,6 +167,10 @@ footer {
     bottom: 0;
 }
 
+footer a {
+    color: white;
+}
+
 /* Class Selectors */
 .active {
     border-bottom: 1px solid yellow;
@@ -208,7 +212,6 @@ footer {
     justify-content: center;
 }
 
-
 #section1 {
     background-color: rgb(225, 250, 225, .5);
 }
@@ -224,6 +227,10 @@ footer {
 
 #section3 {
     background-color: rgb(250, 225, 250, .5);
+}
+
+#small {
+    font-size: small;
 }
 
 #sortBy {
@@ -246,7 +253,7 @@ footer {
     color: #eee;
 }
 
-#temples {
+#temples, #character {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     grid-gap: .5rem;
@@ -254,7 +261,13 @@ footer {
     margin-bottom: 3rem;
 }
 
-#temples article {
+#character {
+    align-items:normal;
+    margin: 1em;
+    margin-bottom: 5em;
+}
+
+#temples article, #character article {
     height: 250px;
     margin: .5rem;
     border: 1px solid rgba(0, 0, 0, .1);
@@ -265,6 +278,15 @@ footer {
     align-items: center;
     justify-content: center;
 }
+
+#character article {
+    height: auto;
+    justify-content: start;
+} 
+
+#character article ul {
+    list-style-type:none;
+} 
 
 #temples h4 {
     color: navy;
@@ -277,6 +299,10 @@ footer {
     height: auto;
     box-shadow: 0 0 30px #777;
     margin: .5rem;
+}
+
+li {
+    margin-left: 1.5em;
 }
 
 /* Media Queries */

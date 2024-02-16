@@ -47,6 +47,7 @@ const reset = () => {
 /* filterTemples Function */
 const filterTemples = (temples) => {
   reset();
+  console.log(temples);
   const filter = document.getElementById('filtered').value;
   switch (filter) {
     case 'utah':
@@ -54,6 +55,7 @@ const filterTemples = (temples) => {
         temple.location.includes('Utah')
       );
       displayTemples(utahTemples.sort(sortTemple));
+      console.log(utahTemples);
       break;
     case 'notutah':
       const notUtTemples = temples.filter(

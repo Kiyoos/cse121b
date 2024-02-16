@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSE 121b | Project</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+  <nav>
+    <ul id="menu">
+      <li><a id="toggleMenu">&equiv;</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="w01-task.html">W1 Task</a></li>
+      <li><a href="w03-task.html">W3 Task</a></li>
+      <li><a href="w04-task.html">W4 Task</a></li>
+      <li><a href="w05-task.html">W5 Task</a></li>
+      <li><a href="project.html" class="active">Project</a></li>
+    </ul>
+  </nav>
+  <main id="gridly">
+    <h1>Dungeon and Dragons</h1>
+    <h2>Classes</h2>
+
+    <select id="ddClass" title="Choose a Class.">
+      <option value="" disabled selected>Choose a Class</option>
+      <option value="all">All Classes</option>
+      <option value="high">High Hit Die</option>
+      <option value="medium">Medium Hit Die</option>
+      <option value="low">Low Hit Die</option>
+    </select>
+
+    <div id="character">
+    </div>
+  </main>
+
+
+  <footer>
+    &copy;<span id="year"></span> | Final Project | CSE 121b | 
+    <br>
+    <span id="small">Attributions: Information from <a href="https://www.dnd5eapi.co/">dnd5eapi.co</a></span>
+  </footer>
+  <script src="scripts/main.js"></script>
+  <script src="scripts/project.js"></script>
+</body>
+
+</html>
