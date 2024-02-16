@@ -22,18 +22,6 @@ const displayClasses = async (list) => {
     const ulProficiency = document.createElement('ul');
     ulProficiency.setAttribute('class', 'proficiencies');
 
-    // for (let ii = 0; ii < list[i].proficiencies.length; ii++) {
-    //   if (ii < 5) {
-    //     ulProficiency.innerHTML += `<li>${list[i].proficiencies[ii].name}</li>`;
-    //   } else if (list[i].proficiencies[ii].length == 6) {
-    //     ulProficiency.innerHTML += `<li>${list[i].proficiencies[ii].name}</li>`;
-    //     break;
-    //   } else {
-    //     ulProficiency.innerHTML += `<li>Choose a Class to see more.</li>`;
-    //     break;
-    //   }
-    // };
-
     for (let ii = 0; ii < list[i].proficiencies.length; ii++) {
       ulProficiency.innerHTML += `<li>${list[i].proficiencies[ii].name}</li>`;
     }
@@ -51,31 +39,11 @@ const createIndex = async (url) => {
   // gets all class names to create a classList
   let data = await getInfo(url);
   let data1 = data.results;
-  console.log('data1');
-  console.log(data1);
-  console.log(data1[0].index);
 
   for (let i = 0; i < data1.length; i++) {
     let data2 = await getInfo(`${url}${data1[i].index}`);
     ddIndex[i] = data2;
   }
-
-  // gets all information for each class name and pushes to the ddIndex
-
-  // data1.forEach(async (item) => {
-  //   let data2 = await getInfo(`${url}${item.index}`);
-  //   console.log(data2);
-  // ddIndex = JSON.parse(data2);
-  // console.log(ddIndex);
-  // let data2 = await getInfo(`${url}${item.index}`);
-  // ddIndex.push(data2);
-  // ddIndex.push(data2);
-  // console.log(ddIndex);
-  // });
-  console.log(`ddIndex 2:`);
-  console.log(ddIndex);
-  console.log(ddIndex.length);
-  // ddIndex.forEach((item) => console.log(item.name));
   displayClasses(ddIndex);
 };
 
